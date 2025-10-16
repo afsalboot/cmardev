@@ -12,7 +12,7 @@ require('./db.js')
 const app = express();
 
 
-app.use(cors({ origin: "https://cmardev.netlify.app" }));
+app.use(cors({ origin: "https://cmardev.vercel.app" }));
 app.use(bodyParser.json());
 
 app.use('/api/customers',customerRouter);
