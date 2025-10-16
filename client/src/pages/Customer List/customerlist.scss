@@ -1,0 +1,156 @@
+.customer-list-page {
+  padding: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .add-customer-btn {
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 10px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+
+    input,
+    select {
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      background: #f9fafb;
+      transition: all 0.2s ease-in-out;
+
+      &:focus {
+        border-color: #2563eb;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+    }
+
+    input {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    select {
+      width: 180px;
+      min-width: 140px;
+    }
+  }
+
+  .customer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.2rem;
+  }
+
+  //RESPONSIVE 
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    .header h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        flex: 1;
+      }
+      select {
+        width: 45%;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    .header {
+      // display: flex;
+      flex-direction: row;
+      // align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .add-customer-btn {
+        width: 150px;
+        text-align: center;
+        
+      }
+    }
+
+    .filters {
+      flex-direction: row;
+      gap: 0.7rem;
+      justify-content: space-between;
+
+      input {
+        flex: 1;
+        font-size: 0.9rem;
+      }
+
+      select {
+        width: 40%;
+        font-size: 0.9rem;
+      }
+    }
+
+    .customer-cards {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .filters {
+      flex-direction: column;
+      align-items: stretch;
+
+      input,
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
