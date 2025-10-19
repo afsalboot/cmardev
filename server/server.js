@@ -12,11 +12,14 @@ require('./db.js')
 const app = express();
 
 
-app.use(cors({ origin: "https://cmardev-6w1l.vercel.app" }));
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  }));
 app.use(bodyParser.json());
 
-app.use('/api/customers',customerRouter);
-app.use('/api/orders', orderRouter);
+app.use('/customers',customerRouter);
+app.use('/orders', orderRouter);
 
 const PORT = process.env.PORT || 4000
 

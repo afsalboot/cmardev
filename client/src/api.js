@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000'
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:4000";
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -8,7 +8,6 @@ const api = axios.create({
     "Content-Type": "application/json",
   },
 });
-
 
 // CUSTOMER APIs
 
@@ -63,7 +62,6 @@ const deleteCustomer = async (id) => {
     throw err;
   }
 };
-
 
 // ORDER APIs
 
@@ -126,8 +124,6 @@ const updatePaymentStatus = async (id, payment, channel) => {
     throw err;
   }
 };
-
-
 
 export default {
   getCustomers,
